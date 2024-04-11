@@ -1,4 +1,5 @@
 // Import the model that we exported in the Todo.js model file
+import res from 'express/lib/response.js'
 import { Devskill } from '../models/devskill.js'
 
 function index(req, res) {
@@ -18,7 +19,39 @@ function newDevSkill(req, res) {
   res.render('devskills/new')
 }
 
+function show(req, res) {
+  //find the devskill in the DB by its _id
+  Devskill.findById(req.params.devskillId)
+  .then(devskill => {
+    res.render('devskill/show', {
+      devskill: devskill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/todos')
+  })
+}
+
+function create(req, res) {
+  console.log(req.body)
+  //set done property to false
+  req.body.proficiency = false
+  //create skill
+  Devskill.create(req.body)
+  .then(devskill => {
+    res.redirect('/devskills')
+  })
+//redirect to devskills index
+  .catch(error => {
+    console.log(error)
+    res.redirect('/devskills')
+  })
+}
+
 export {
   index,
-  newDevSkill as new 
+  newDevSkill as new, 
+  show,
+  create
 }

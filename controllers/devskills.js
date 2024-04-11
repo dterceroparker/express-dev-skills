@@ -19,20 +19,6 @@ function newDevSkill(req, res) {
   res.render('devskills/new')
 }
 
-function show(req, res) {
-  //find the devskill in the DB by its _id
-  Devskill.findById(req.params.devskillId)
-  .then(devskill => {
-    res.render('devskills/show', {
-      devskill: devskill
-    })
-  })
-  .catch(error => {
-    console.log(error)
-    res.redirect('/devskills')
-  })
-}
-
 function create(req, res) {
   //set done property to false
   req.body.proficiency = false
@@ -48,9 +34,23 @@ function create(req, res) {
   })
 }
 
+function show(req, res) {
+  //find the devskill in the DB by its _id
+  Devskill.findById(req.params.devskillId)
+  .then(devskill => {
+    res.render('devskills/show', {
+      devskill: devskill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/devskills')
+  })
+}
+
 export {
   index,
   newDevSkill as new, 
-  show,
-  create
+  create,
+  show
 }

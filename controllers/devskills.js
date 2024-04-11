@@ -36,7 +36,7 @@ function show(req, res) {
 function create(req, res) {
   console.log(req.body)
   //set done property to false
-  req.body.done = false
+  req.body.proficiency = false
   //create skill
   Devskill.create(req.body)
   .then(devskill => {

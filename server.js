@@ -7,6 +7,9 @@ import { fileURLToPath } from 'url'
 import createError from 'http-errors'
 import logger from 'morgan'
 
+// connect to the database with Mongoose
+import './config/database.js'
+
 // import routers
 import { router as indexRouter } from './routes/index.js'
 import { router as devskillsRouter } from './routes/devskills.js'

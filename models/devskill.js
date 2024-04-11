@@ -12,5 +12,5 @@ const devskillSchema = new Schema({
 const Devskill = mongoose.model('Devskill', devskillSchema)
 
 export {
-  devskillSchema
+  Devskill
 }

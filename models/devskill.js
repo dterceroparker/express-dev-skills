@@ -5,7 +5,7 @@ const Schema = mongoose.Schema
 	
 const devskillSchema = new Schema({
   text: String,
-  done: Boolean
+  proficiency: Boolean
 })
 
 // Compile the schema into a model and export it

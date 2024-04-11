@@ -6,9 +6,8 @@
   <title>Express Dev-skills</title>
 </head>
 <body>
-  <h1>Devskills</h1>
+  <h1>Dev Skills</h1>
   <ul>
-    <a href="/devskills/new">Add Skill</a>
     <% devskills.forEach(devskill => { %>
       <li>
       <%= devskill.skill %>
@@ -17,6 +16,6 @@
     </li>
     <% }) %>
   </ul>
-  
+  <a href="/devskills/new">Add Skill</a>
 </body>
 </html>

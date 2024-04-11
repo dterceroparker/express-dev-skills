@@ -23,20 +23,20 @@ function show(req, res) {
   //find the devskill in the DB by its _id
   Devskill.findById(req.params.devskillId)
   .then(devskill => {
-    res.render('devskill/show', {
+    res.render('devskills/show', {
       devskill: devskill
     })
   })
   .catch(error => {
     console.log(error)
-    res.redirect('/todos')
+    res.redirect('/devskills')
   })
 }
 
 function create(req, res) {
   console.log(req.body)
   //set done property to false
-  req.body.proficiency = false
+  req.body.done = false
   //create skill
   Devskill.create(req.body)
   .then(devskill => {

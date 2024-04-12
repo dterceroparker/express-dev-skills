@@ -12,6 +12,7 @@ router.get('/new', devskillsCtrl.new)
 router.get('/:devskillId', devskillsCtrl.show)
 //POST localhost:3000/devskills
 router.post('/', devskillsCtrl.create)
-//DELETE /todos/:todoId
+// new route below
+router.delete('/:devskillId', devskillsCtrl.delete)
 
 export { router }

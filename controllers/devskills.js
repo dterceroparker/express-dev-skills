@@ -49,9 +49,22 @@ function show(req, res) {
   })
 }
 
+function deleteDevSkill(req, res) {
+  Devskill.findByIdAndDelete(req.params.devskillId)
+  .then(devskill => {
+    res.redirect('devskills')
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/devskills')
+  })
+} 
+
+
 export {
   index,
   newDevSkill as new, 
   create,
-  show
+  show,
+  deleteDevSkill as delete
 }

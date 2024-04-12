@@ -7,6 +7,7 @@ function index(req, res) {
   .then(devskills => { // devskills represents the result of the query, in this case ALL devskills
     res.render('devskills/index', {
       devskills: devskills,
+      date: req.date
     })
   })
   .catch(error => { // If there's an error, console.log it and redirect back home!

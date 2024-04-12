@@ -21,6 +21,13 @@ const app = express()
 app.set('view engine', 'ejs')
 
 // basic middleware
+
+app.use(function(req, res, next) {
+  //add a time property to the req object
+  req.date = new Date().toLocaleDateString()
+  next()
+})
+
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))

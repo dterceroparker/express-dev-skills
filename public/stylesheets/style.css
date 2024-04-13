@@ -1,10 +1,12 @@
-body {
+body, .new-skill {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #0f384881;
 }
 
 a {
-  color: #00B7FF;
+  color: #221785;
+  text-decoration: none;
 }
 
 .delete-form {
@@ -14,8 +16,23 @@ a {
 	
 .delete-form button {
   color: red;
+  background-color: rgba(255, 228, 196, 0.489);
+  margin: 5px;
+  height: 30px;
+}
+.edit-button {
+  color: red;
+  background-color: rgba(255, 228, 196, 0.489);
+  margin: 5px;
+  height: 30px;
 }
 	
 li {
   list-style: none;
+}
+
+.new-skill {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #0f384881;
 }

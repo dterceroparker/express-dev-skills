@@ -60,11 +60,38 @@ function deleteDevSkill(req, res) {
   })
 } 
 
+function edit(req, res) {
+  //find the devskill and pass it to render
+  Devskill.findById(req.params.devskillId)
+  .then(devskill => {
+    //render a view with a form (edit.ejs)
+    res.render('devskills/edit', {
+      devskill: devskill
+    })
+  })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/devskills')
+  })
+}
+
+function update(req, res) {
+  Devskill.findByIdAndUpdate(req.params.devskillId, req.body, {new: true})
+  .then(devskill => {
+    res.redirect(`/devskills/${req.params.devskillId}`)
+    })
+  .catch(error => {
+    console.log(error)
+    res.redirect('/devskills')
+  })
+}
 
 export {
   index,
   newDevSkill as new, 
   create,
   show,
-  deleteDevSkill as delete
+  deleteDevSkill as delete,
+  edit,
+  update
 }

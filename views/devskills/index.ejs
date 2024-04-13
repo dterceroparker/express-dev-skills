@@ -16,11 +16,12 @@
           class="delete-form"
           method="POST"
         >
-        <button type="submit">X</button>
+        <button class="delete-button" type="submit">X</button>
       </form>
+      <a href="/devskills/<%= devskill._id %>/edit"><button class="edit-button">✏️</button></a>
       <a href="/devskills/<%= devskill._id %>"><%= devskill.text %></a>
-      -
-      <%= devskill.proficiency ? 'true' : 'false' %>
+      <!-- - -->
+      <!-- <%= devskill.proficiency ? 'true' : 'false' %> -->
     </li>
     <% }) %>
   </ul>

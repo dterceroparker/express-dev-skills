@@ -10,9 +10,13 @@ router.get('/', devskillsCtrl.index)
 router.get('/new', devskillsCtrl.new)
 //GET localhost:3000/devskills/:devskillId
 router.get('/:devskillId', devskillsCtrl.show)
+// GET localhost:3000/devskills/:devskillId/edit
+router.get('/:devskillId/edit', devskillsCtrl.edit)
 //POST localhost:3000/devskills
 router.post('/', devskillsCtrl.create)
-// new route below
+// DELETE localhost:3000/devskills/:devskillId
 router.delete('/:devskillId', devskillsCtrl.delete)
+// PUT localhost:3000/devskills/:devskillId
+router.put('/:devskillId', devskillsCtrl.update)
 
 export { router }

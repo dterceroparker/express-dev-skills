@@ -23,8 +23,8 @@ a {
 .edit-button {
   color: red;
   background-color: rgba(255, 228, 196, 0.489);
-  margin: 5px;
-  height: 30px;
+  font-size: 11px;
+  margin-right: 8px;
 }
 	
 li {
@@ -35,4 +35,10 @@ li {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-color: #0f384881;
+}
+
+button {
+  padding: 4px;
+  width: 30px;
+  height: 30px;
 }

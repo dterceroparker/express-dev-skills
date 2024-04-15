@@ -22,7 +22,7 @@ function newDevSkill(req, res) {
 
 function create(req, res) {
   //set done property to false
-  req.body.proficiency = false
+  req.body.proficiency = "Beginner"
   //create skill
   Devskill.create(req.body)
   .then(devskill => {
